@@ -6,7 +6,12 @@
 #insira mais de um telefone para uma pessoa;
 #mostre quantas pessoas residem no mesmo estado;
 #mostre os dados das pessoas onde a idade é igual a 30 anos;
-#drop table pessoas
+#drop table pessoas serve para apagar a tabela existente, 
+#coloca o cursor em cima e roda no raio com o cursor (vai apagar a tabela,
+#coloca o cursor pra rodar na tabela novamente pra ela ser recriada.
+CREATE database atividade_sql;
+
+USE atividade_sql;
 drop table pessoas;
 CREATE TABLE pessoas (
 nome VARCHAR(100),
@@ -43,4 +48,36 @@ SELECT * FROM pessoas WHERE idade > 32;
 SELECT * FROM pessoas WHERE idade < 32;
 
 SELECT Count(*) as quantidade, nome FROM pessoas WHERE idade > 15 GROUP BY nome;
+
+SELECT nome FROM pessoas WHERE idade >15;
+#selecione nome na tabela pessoas onde o email é null;
+SELECT nome FROM pessoas WHERE email IS null;
+#esse comando baixo de SET UPDATE 
+#é uma trava de segurança para não alterar TODOS os dados da tabela
+SET SQL_SAFE_UPDATES = 0;
+#UPDATE = atualize na tabela pessoas colocando email = meuemail... onde o email 
+#é null E o nome igual a Amanda Cecília.
+UPDATE pessoas SET email = "meuemail@gmail.com" WHERE email IS null AND nome = "Amanda Cecília";
+#selecione nome , email na tabela pessoas onde o nome é igual a "Luan MURUK"
+SELECT nome, email FROM pessoas WHERE nome = "Luan Muruk";
+
+UPDATE pessoas SET email = "francisco@gmail.com" WHERE nome = "Francisco Almeida";
+SELECT nome, email FROM pessoas WHERE nome = "Francisco Almeida";
+SELECT * FROM pessoas ORDER BY nome ASC;
+
+drop table produt;
+CREATE TABLE produto(
+nome_do_produto VARCHAR(30),
+preco DOUBLE
+);
+ALTER TABLE produto ADD quantidade INT;
+DESC produto;
+#caso escreva algum nome da descrição da tabela errado, use: 
+#ALTER TABLE produto DROP COLUMN preço; (ele irá apagar o nome errado;
+
+ALTER TABLE produto RENAME COLUMN nome_do_produto TO nomes_dos_produtos;
+#solicita uma concatenação com a string nome, com a string idade, na tabela pessoa
+SELECT Concat(nome, " tem ", idade, " anos") AS informacao FROM pessoa;
+
  
+ DELETE FROM pessoa WHERE nome = "Maria";

@@ -14,7 +14,7 @@ CREATE TABLE pessoa(
     # desc: descreve a tabela
     desc pessoa;
     
-    #INSERT TO: insere o produto na tabela
+    #INSERT INTO: insere o produto na tabela
     INSERT INTO pessoa VALUES("Fernanda Guedes", 32, 'F', 64);
     
     INSERT INTO pessoa(nome, idade) values("Fernanda Guedes", 32);
