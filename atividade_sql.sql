@@ -81,3 +81,7 @@ SELECT Concat(nome, " tem ", idade, " anos") AS informacao FROM pessoa;
 
  
  DELETE FROM pessoa WHERE nome = "Maria";
+ 
+ SELECT Count(*) FROM pessoas;
+ 
+ 

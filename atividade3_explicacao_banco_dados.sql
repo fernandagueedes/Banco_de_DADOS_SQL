@@ -49,8 +49,8 @@ CREATE DATABASE atividade_explicacao;
  
  SELECT Concat("há ", quantidade," ", unidade_medida, " de ", descricao, " no estoque, com valor unitário de ", valor_unitario, " reais.") AS informacao FROM produtos;  
 
- 
- 
+
+
  
 
  

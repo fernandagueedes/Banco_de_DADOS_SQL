@@ -31,7 +31,7 @@ CREATE TABLE pessoa(
     create table produto (descricaoProduto varchar(100),
     preco double(6,2), 
     #enum é um tipo de dados com opcoes pré definidas
-    status_pedido enum("entregue", "preparando", "saiu pra entrega")
+    stapessoastus_pedido enum("entregue", "preparando", "saiu pra entrega")
 );    
 
 #para acessar dados no enum posso usar o nome da opçãoo que ele ocupa no enum ou 
@@ -60,4 +60,11 @@ insert into produto values("Sanduba", 15.56, 3);
     #no caso abaixo vai aparecer primeiro (2+4) e embaixo o resultado.
     select (2 + 4); 
     
+    /*
+    
+    comentário várias linhas
+    */
+    
+SELECT  Count(*) FROM pessoa;
+SELECT * FROM pessoa;
     
